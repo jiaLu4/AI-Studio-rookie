@@ -20,5 +20,6 @@ This folder contains the AT5 portfolio files and evidence assets for Ge Zhao, st
 | Frontend UI | `assets/smartqc_demo_result.png`, `assets/code_frontend_api.png` |
 | Deployment explanation | `assets/cloudflared_workflow.png` |
 | Stage 1 supporting evidence | `assets/code_abo_features.png`, `assets/stage1_examples.png` |
+| Reflection and project documentation | [Personal reflective journals](https://ai-studio-rookie.atlassian.net/wiki/spaces/A/pages/3276856/Reflective+Journals_Ge+Zhao), [team Confluence documentation space](https://ai-studio-rookie.atlassian.net/wiki/spaces/A/overview?homepageId=163949) |
 
 The GUI evidence image `assets/smartqc_demo_result.png` is an English controlled demo screenshot using the example product image and the Stage 2 MOS model output. The model produced MOS 3.26/4.00, converted to a visual quality score of 81.5/100.
