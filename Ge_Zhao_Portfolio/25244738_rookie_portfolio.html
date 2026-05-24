@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>25244738 rookie portfolio</title>
+<style>
+  @page { size: A4; margin: 14mm 13mm 16mm 13mm; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #1f2937; margin: 0; background: #f3f4f6; line-height: 1.46; }
+  .page { background: white; max-width: 980px; margin: 0 auto 18px; padding: 34px 42px; box-shadow: 0 4px 18px rgba(15, 23, 42, .08); }
+  .cover { min-height: 930px; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(145deg,#f8fafc,#e0f2fe); }
+  .cover h1 { font-size: 43px; line-height: 1.05; margin: 18px 0 12px; color: #0f172a; letter-spacing: -0.5px; }
+  .cover .subtitle { font-size: 18px; color: #334155; max-width: 720px; }
+  .badge { display: inline-block; padding: 6px 10px; border-radius: 999px; background: #dbeafe; color: #1d4ed8; font-weight: 700; font-size: 12px; letter-spacing: .02em; }
+  h2 { font-size: 26px; color: #0f172a; margin: 0 0 12px; padding-top: 4px; border-bottom: 3px solid #0f766e; padding-bottom: 7px; }
+  h3 { font-size: 18px; color: #0f172a; margin: 22px 0 8px; }
+  h4 { font-size: 14px; color: #0f766e; margin: 18px 0 5px; text-transform: uppercase; letter-spacing: .03em; }
+  p { margin: 8px 0; font-size: 12.4px; }
+  ul { margin: 7px 0 10px 19px; padding: 0; }
+  li { margin: 4px 0; font-size: 12.4px; }
+  code { font-family: Consolas, monospace; font-size: 10.8px; color: #0f172a; }
+  .small { font-size: 11px; color: #475569; }
+  .muted { color: #64748b; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .card { border: 1px solid #d8e0ec; border-radius: 10px; padding: 13px 14px; background: #f8fafc; }
+  .card h3 { margin-top: 0; font-size: 15px; }
+  .callout { border-left: 5px solid #0f766e; background: #ecfdf5; padding: 12px 15px; margin: 13px 0; border-radius: 8px; }
+  .warning { border-left-color: #f59e0b; background: #fffbeb; }
+  .claim { border-left-color: #2563eb; background: #eff6ff; }
+  .figure { margin: 14px 0 18px; page-break-inside: avoid; }
+  .figure img { max-width: 100%; display: block; border: 1px solid #d8e0ec; border-radius: 8px; background: white; }
+  .figure figcaption { font-size: 10.7px; color: #475569; margin-top: 5px; }
+  .codefig img { border-radius: 10px; border: 1px solid #334155; max-height: 650px; object-fit: contain; }
+  .wide img { width: 100%; }
+  .half img { max-height: 360px; object-fit: contain; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0 16px; page-break-inside: avoid; }
+  th, td { border: 1px solid #d8e0ec; padding: 7px 8px; font-size: 11.4px; vertical-align: top; }
+  th { background: #e2e8f0; color: #0f172a; text-align: left; }
+  .toc a, a { color: #1d4ed8; text-decoration: none; }
+  .section-break { page-break-before: always; }
+  .avoid-break { page-break-inside: avoid; }
+  .cover-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 34px; }
+  .cover-meta .card { background: rgba(255,255,255,.7); }
+  .refs li { font-size: 11.2px; word-break: break-word; }
+  .appendix-list li { font-size: 11.5px; }
+  .apa-refs p { font-size: 11.2px; margin: 7px 0 7px 22px; text-indent: -22px; word-break: break-word; }
+  @media print {
+    body { background: #fff; }
+    .page { max-width: none; margin: 0; box-shadow: none; }
+    .cover { min-height: 930px; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div>
+    <span class="badge">AT5 Complete Portfolio</span>
+    <h1>SmartQC Product Image Quality Control System</h1>
+    <p class="subtitle">Individual portfolio for the rookie group project. This portfolio focuses on my own work in Stage 2 image quality assessment, model comparison, ClearML tracking, product demo integration, CI/CD explanation, and final reflection.</p>
+    <div class="cover-meta">
+      <div class="card"><b>Student</b><br>Ge Zhao<br><span class="muted">Student number: 25244738</span></div>
+      <div class="card"><b>Team</b><br>rookie<br><span class="muted">Team members: Jia Lu, Changjian Li, Ge Zhao</span></div>
+      <div class="card"><b>Project repo</b><br><a href="https://github.com/jiaLu4/AI-Studio-rookie/tree/FinalVersion">AI-Studio-rookie / FinalVersion</a><br><span class="muted">V2 branch used for final product code</span></div>
+      <div class="card"><b>Data source</b><br><a href="https://database.mmsp-kn.de/koniq-10k-database.html">KonIQ-10k IQA Database</a><br><span class="muted">Used for Stage 2 MOS quality scoring</span></div>
+    </div>
+  </div>
+  <div class="callout">
+    <b>My main contribution in one sentence:</b> I helped move SmartQC from a simple model experiment into a more complete demo workflow by building and comparing the Stage 2 image quality model, tracking experiments in ClearML, and connecting the model result to a seller-facing product demo and deployment story.
+  </div>
+</section>
+
+<section class="page toc">
+  <h2>Portfolio Structure and Evidence Map</h2>
+  <table>
+    <tr><th>Assessment focus</th><th>Where it is covered</th><th>Main evidence</th></tr>
+    <tr><td>Environmental impacts</td><td>Section 2</td><td>training compute, storage, deployment impact with sources</td></tr>
+    <tr><td>Social impacts</td><td>Section 3</td><td>seller feedback, fairness risk, transparency and human review</td></tr>
+    <tr><td>Problem design and project design</td><td>Section 4</td><td>business context, ML task, datasets, requirements</td></tr>
+    <tr><td>POC design and implementation</td><td>Section 5</td><td>Stage 2 POC code, metrics and training curve</td></tr>
+    <tr><td>Interim solution V0.1</td><td>Section 6</td><td>multi-model experiments, ClearML, model comparison</td></tr>
+    <tr><td>Final solution V0.2</td><td>Section 7</td><td>FastAPI, MOS service, UI, Cloudflared and CI/CD design</td></tr>
+    <tr><td>Communicate project results</td><td>Section 8</td><td>business-facing result explanation and presentation evidence</td></tr>
+    <tr><td>Team reflection</td><td>Section 9</td><td>specific interactions, feelings, learning, strengths and actions</td></tr>
+    <tr><td>Appendix and links</td><td>Section 10</td><td>repo links, data links, code evidence map and references</td></tr>
+  </table>
+  <div class="callout claim">
+    <b>Contribution scope.</b> I mainly claim detailed ownership for Stage 2 image-quality model work, experiment comparison, ClearML evidence, and final product/demo workflow explanation. I also learned from and supported the Stage 1 and product design parts, but I do not claim that all Stage 1 core work was only done by me.
+  </div>
+</section>
+
+<section class="page section-break">
+  <h2>1. Project Summary</h2>
+  <p>SmartQC is a two-stage AI product for e-commerce product image checking. The business problem is simple: sellers upload many product images, and manual checking is slow and not always consistent. Our idea is to give sellers a fast check before publishing, so they can fix weak images earlier.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Product workflow</h3>
+      <ul>
+        <li>Seller uploads image and enters product text.</li>
+        <li>Stage 1 checks product validity and text-image consistency.</li>
+        <li>Stage 2 checks image quality if Stage 1 allows it.</li>
+        <li>The system returns pass, review, or reject with a short reason.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>My main work</h3>
+      <ul>
+        <li>Stage 2 MOS image quality model using KonIQ-10k.</li>
+        <li>ResNet18 and ResNet50 comparison with controlled settings.</li>
+        <li>ClearML tracking for model runs and result comparison.</li>
+        <li>Final demo workflow: backend model service, UI explanation, CI/CD and Cloudflared deployment notes.</li>
+      </ul>
+    </div>
+  </div>
+  <figure class="figure wide"><img src="assets/smartqc_demo_result.png" alt="Evidence 1: SmartQC V2 seller-facing demo result. The example image is uploaded, English product text is provided, and the UI shows the final recommendation and MOS quality score."><figcaption>Evidence 1: SmartQC V2 seller-facing demo result. The example image is uploaded, English product text is provided, and the UI shows the final recommendation and MOS quality score.</figcaption></figure>
+  <p>The MVP is not a full marketplace platform. It is a working demo that proves the key value: an uploaded product image can be checked by AI and converted into a clear listing recommendation.</p>
+</section>
+
+<section class="page section-break">
+  <h2>2. Environmental Impacts</h2>
+  <p>I identify three environmental impacts in the context of SmartQC. I connect them to the whole product cycle: data ingestion, model training, experiment tracking, deployment, and inference. I also include what I did or would do to reduce the impact.</p>
+
+  <h3>Impact 1: Training compute and electricity use</h3>
+  <p>Stage 2 model work used repeated training runs. I compared ResNet18 and ResNet50, different input sizes, and several settings. This used compute time and electricity. Data centres and data transmission networks are already a meaningful part of global electricity use, and AI growth makes this issue more important (International Energy Agency, 2023). For SmartQC, the main compute cost is not one inference request. The bigger cost is repeated training and experimentation.</p>
+  <p>My mitigation was to avoid random trial-and-error. I used fixed train/validation/test splits and planned comparison groups. This made the experiments more useful and reduced waste. I also used MAE and validation curves to stop chasing a larger model just because it looked stronger.</p>
+
+  <h3>Impact 2: Storage footprint from data, models and logs</h3>
+  <p>The project uses large images, CSV labels, model checkpoints, logs, screenshots and ClearML experiment records. If everything is copied into GitHub or kept forever, the storage footprint becomes messy and wasteful. This is why I separated code from large data and model files. The repository keeps code and documentation, while large data and checkpoints are referenced through external/shared storage. This is also why <code>.gitignore</code> excludes model weights, logs, uploads and raw storage folders.</p>
+
+  <h3>Impact 3: Deployment and repeated inference cost</h3>
+  <p>A deployed AI product still uses energy after training. If every listing image triggers heavy models without a reason, the product will waste compute. In SmartQC, Stage 1 acts as a gatekeeper. If an image is clearly invalid or mismatched, Stage 2 is skipped. This reduces unnecessary quality scoring. The Software Carbon Intensity idea is useful here because it encourages teams to think about emissions per software function, such as per check or per user request (Green Software Foundation, n.d.).</p>
+  <div class="callout">
+    <b>My learning:</b> I learned that environmental impact is not only about model training. It also appears in data storage, model versioning, logging, deployment and every future user request.
+  </div>
+</section>
+
+<section class="page section-break">
+  <h2>3. Social Impacts</h2>
+  <p>I identify three social impacts for SmartQC. The social impact is not only technical accuracy. It is also about sellers, reviewers, transparency, fairness and trust.</p>
+
+  <h3>Impact 1: Faster feedback for sellers and less manual review burden</h3>
+  <p>The positive impact is that sellers can receive feedback earlier. Instead of waiting for manual moderation, they can see whether the image is ready, needs review, or should be retaken. This can reduce repeated back-and-forth work for sellers and platform review teams. It also makes image quality rules easier to understand.</p>
+
+  <h3>Impact 2: Risk of unfair rejection or poor fit for some product categories</h3>
+  <p>Image quality is partly subjective. A model trained on a public IQA dataset may not understand all marketplace product styles. Some product images may be creative, dark, reflective or taken in unusual backgrounds. If the model is used as a hard automatic decision, some sellers may be treated unfairly. International AI guidance stresses ideas such as fairness, transparency, accountability and human-centred AI (Organisation for Economic Co-operation and Development, 2019; UNESCO, 2021). For our product, this means SmartQC should support review instead of acting as final authority for every case.</p>
+
+  <h3>Impact 3: Transparency and user trust</h3>
+  <p>A raw ML score is hard for a seller to understand. The UI should explain the result in normal language. In V2, the system shows product validity, text-image consistency, visual quality, and a next action. NIST AI RMF also highlights trustworthiness across design, development, use and evaluation of AI systems (National Institute of Standards and Technology, 2023). In my work, I tried to connect model scores to reasons, thresholds and a recommendation, so the user can understand what to do next.</p>
+  <div class="callout warning">
+    <b>Important limit:</b> SmartQC should be treated as decision support. For real production use, it still needs human review for borderline cases, more product-category testing, and a feedback loop from real sellers.
+  </div>
+</section>
+
+<section class="page section-break">
+  <h2>4. Problem Design and Project Design</h2>
+  <h3>Business context</h3>
+  <p>The project is set in an e-commerce listing workflow. The user uploads a main product image and product text. The business goal is to reduce manual checking effort, improve listing quality, and give sellers faster and clearer feedback before publishing.</p>
+
+  <h3>ML problem involved</h3>
+  <p>SmartQC is not only one model. It is a two-stage AI solution:</p>
+  <ul>
+    <li><b>Stage 1:</b> product-image validity and text-image consistency. This is a multimodal matching / classification problem using CLIP-style embeddings.</li>
+    <li><b>Stage 2:</b> image quality assessment. This is a computer vision regression problem. The model predicts a quality score based on image content.</li>
+    <li><b>Final recommendation:</b> a rule layer converts model outputs into pass, review, or reject.</li>
+  </ul>
+
+  <h3>Datasets used</h3>
+  <table>
+    <tr><th>Stage</th><th>Dataset</th><th>Purpose</th><th>My connection</th></tr>
+    <tr><td>Stage 1</td><td>Amazon Berkeley Objects style product metadata and images</td><td>Create product image-text pairs and negative samples</td><td>I learned from this part and used it in the final product workflow, but I do not claim main ownership.</td></tr>
+    <tr><td>Stage 2</td><td>KonIQ-10k IQA Database</td><td>Train MOS image quality regression model</td><td>This is my main technical contribution area.</td></tr>
+  </table>
+  <p>KonIQ-10k is a large image quality assessment database with 10,073 quality-scored images and 1.2 million crowd-sourced ratings from 1,459 workers, according to the official database page and paper (Hosu et al., 2020; Multimedia Signal Processing Group, n.d.). This made it suitable for the Stage 2 quality scoring work.</p>
+  <figure class="figure half"><img src="assets/mos_distribution.png" alt="Evidence 2: MOS distribution from the KonIQ-10k based Stage 2 dataset used in my image quality model work."><figcaption>Evidence 2: MOS distribution from the KonIQ-10k based Stage 2 dataset used in my image quality model work.</figcaption></figure>
+
+  <h3>My contribution to proposal and requirements</h3>
+  <p>In the early project stage, I helped set up the team workspace and contributed to the two-stage idea: first check whether the image is relevant, then check quality. I also helped discuss dataset options, product feasibility, technical risks and business value. Later, I mainly developed the Stage 2 path in more depth.</p>
+  <p>The final requirements I worked toward were practical: image upload, optional product text, quality score, plain recommendation, and demo access. I learned that requirements are not only a document. They decide what model output should look like in the UI.</p>
+</section>
+
+<section class="page section-break">
+  <h2>5. POC Design and Implementation</h2>
+  <p>The POC proved that Stage 2 image quality scoring could work. My focus was to build a ResNet-based MOS regression workflow using KonIQ-10k. I started with a relatively simple training setup, then evaluated it using clear metrics.</p>
+
+  <h3>POC design</h3>
+  <ul>
+    <li>Input: product or general image.</li>
+    <li>Target: MOS quality score.</li>
+    <li>Model: pretrained ResNet18 with a regression head.</li>
+    <li>Output: predicted MOS, later converted into product-style quality score.</li>
+    <li>Metrics: MAE, RMSE, PLCC and SRCC.</li>
+  </ul>
+
+  <div class="grid2">
+    <div><figure class="figure codefig"><img src="assets/code_training_config.png" alt="Evidence 3: POC Stage 2 configuration. I used fixed split ratios, image size, batch size, learning rates and early stopping settings."><figcaption>Evidence 3: POC Stage 2 configuration. I used fixed split ratios, image size, batch size, learning rates and early stopping settings.</figcaption></figure></div>
+    <div><figure class="figure codefig"><img src="assets/code_resnet_model.png" alt="Evidence 4: POC ResNet18 MOS regressor. The classification head is changed into a regression head and output is mapped to MOS range."><figcaption>Evidence 4: POC ResNet18 MOS regressor. The classification head is changed into a regression head and output is mapped to MOS range.</figcaption></figure></div>
+  </div>
+
+  <h3>POC implementation quality</h3>
+  <p>I did not only train a model once. I saved train/validation/test splits, checkpoints, training logs and test outputs. This helped the POC become repeatable. The test summary showed:</p>
+  <table>
+    <tr><th>Metric</th><th>Value from test_summary.json</th><th>Meaning</th></tr>
+    <tr><td>Best epoch</td><td>15</td><td>The best validation result was selected by evidence.</td></tr>
+    <tr><td>Test MAE</td><td>0.2097</td><td>Average MOS error was around 0.21 on the test set.</td></tr>
+    <tr><td>Test RMSE</td><td>0.2699</td><td>Shows overall error size.</td></tr>
+    <tr><td>PLCC / SRCC</td><td>0.875 / 0.843</td><td>The predictions had strong linear and rank correlation with true MOS.</td></tr>
+  </table>
+  <figure class="figure half"><img src="assets/training_mae_curve.png" alt="Evidence 5: POC training curve generated from training_log.csv. It shows model improvement and the best validation point."><figcaption>Evidence 5: POC training curve generated from training_log.csv. It shows model improvement and the best validation point.</figcaption></figure>
+  <figure class="figure codefig"><img src="assets/code_metrics.png" alt="Evidence 6: Evaluation code for MAE, RMSE, PLCC and SRCC. I used metrics that can explain both error and ranking quality."><figcaption>Evidence 6: Evaluation code for MAE, RMSE, PLCC and SRCC. I used metrics that can explain both error and ranking quality.</figcaption></figure>
+
+  <p>From this POC, I learned that a model result is stronger when it is saved with configs, splits, logs and test predictions. Without those files, the score is hard to trust later.</p>
+</section>
+
+<section class="page section-break">
+  <h2>6. Interim Solution V0.1</h2>
+  <p>In the interim solution, I moved Stage 2 from a small POC mindset to a more systematic model development process. The main change was controlled experiment comparison and ClearML tracking.</p>
+
+  <h3>V0.1 design</h3>
+  <p>I designed the comparison around two CNN backbones and multiple training settings. I wanted to know whether a deeper model was always better, or whether input size and preprocessing mattered more. This was important because product image quality depends on details such as blur, exposure and object clarity.</p>
+  <ul>
+    <li>Backbones: ResNet18 and ResNet50.</li>
+    <li>Settings: baseline, stronger, tough, and larger aspect-ratio-preserving input.</li>
+    <li>Tracking: ClearML tasks for configurations, curves, logs and model version evidence.</li>
+    <li>Main metric: MAE, because it directly means average score error.</li>
+  </ul>
+
+  <figure class="figure wide"><img src="assets/clearml_tasks_crop.png" alt="Evidence 7: ClearML task list. Multiple Stage 2 training runs were tracked separately instead of using manual notes only."><figcaption>Evidence 7: ClearML task list. Multiple Stage 2 training runs were tracked separately instead of using manual notes only.</figcaption></figure>
+  <figure class="figure wide"><img src="assets/clearml_scalars.png" alt="Evidence 8: ClearML scalar curves. I used these curves to compare loss, MSE and resource behaviour during training."><figcaption>Evidence 8: ClearML scalar curves. I used these curves to compare loss, MSE and resource behaviour during training.</figcaption></figure>
+
+  <h3>What I found</h3>
+  <p>The result was not exactly what I first expected. I thought ResNet50 would clearly win because it is deeper. But the comparison showed that input setting and aspect-ratio preservation were very important. The best result in the comparison table was ResNet18 with aspect 384x512, while ResNet50 aspect 384x512 was close. This made me think more carefully about preprocessing, not only model depth.</p>
+  <div class="grid2">
+    <div><figure class="figure half"><img src="assets/model_selection_mae.png" alt="Evidence 9: Model selection chart. Lower test MAE is better; aspect-aware inputs performed strongly."><figcaption>Evidence 9: Model selection chart. Lower test MAE is better; aspect-aware inputs performed strongly.</figcaption></figure></div>
+    <div><figure class="figure half"><img src="assets/model_comparison_table.png" alt="Evidence 10: Model comparison table screenshot used in presentation and portfolio evidence."><figcaption>Evidence 10: Model comparison table screenshot used in presentation and portfolio evidence.</figcaption></figure></div>
+  </div>
+
+  <div class="callout">
+    <b>My learning from V0.1:</b> A bigger model is not automatically a better product model. A fair split, clear metric, and careful preprocessing can matter more than simply choosing a deeper backbone.
+  </div>
+</section>
+
+<section class="page section-break">
+  <h2>7. Final Solution V0.2</h2>
+  <p>The final solution connected separate model work into a working product demo. This is where the project started to feel less like a notebook and more like an AI product.</p>
+
+  <h3>V0.2 design</h3>
+  <p>The final design has a frontend, a FastAPI backend, two AI services, a rule-based listing decision layer, draft storage and demo deployment support.</p>
+  <table>
+    <tr><th>Component</th><th>Purpose</th><th>Evidence</th></tr>
+    <tr><td>Static frontend</td><td>Seller listing form, image upload, SmartQC result panel</td><td>index.html, app.js, styles.css</td></tr>
+    <tr><td>FastAPI backend</td><td>Receives image and text, calls Stage 1 and Stage 2 services</td><td>backend/main.py</td></tr>
+    <tr><td>Stage 1 service</td><td>CLIP product validity and text-image consistency check</td><td>backend/clip_service.py</td></tr>
+    <tr><td>Stage 2 service</td><td>Loads MOS model and predicts quality score</td><td>backend/mos_service.py</td></tr>
+    <tr><td>Draft store</td><td>Saves demo listing records and uploaded image files</td><td>backend/draft_service.py</td></tr>
+    <tr><td>Deployment path</td><td>Vercel frontend, Python backend, Cloudflared public demo link</td><td>README, vercel.json, Cloudflared slide</td></tr>
+  </table>
+
+  <figure class="figure wide"><img src="assets/smartqc_demo_result.png" alt="Evidence 11: Final SmartQC UI in V0.2. The result screen shows product validity, text-image match, visual quality score, MOS prediction and listing decision."><figcaption>Evidence 11: Final SmartQC UI in V0.2. The result screen shows product validity, text-image match, visual quality score, MOS prediction and listing decision.</figcaption></figure>
+
+  <h3>Implementation evidence</h3>
+  <p>The backend decides whether Stage 2 should run. If Stage 1 detects a clearly invalid image or a mismatch, Stage 2 is skipped. This saves compute and gives a clear reason to the user. If the image passes Stage 1, Stage 2 predicts a quality score. Then the final rule returns pass, review or reject.</p>
+  <figure class="figure codefig"><img src="assets/code_backend_decision.png" alt="Evidence 12: Backend two-stage decision logic. It connects Stage 1, Stage 2 and final listing recommendation."><figcaption>Evidence 12: Backend two-stage decision logic. It connects Stage 1, Stage 2 and final listing recommendation.</figcaption></figure>
+  <figure class="figure codefig"><img src="assets/code_mos_service.png" alt="Evidence 13: Final MOS service. The saved model checkpoint is loaded and the MOS result is converted to a 0-100 quality score."><figcaption>Evidence 13: Final MOS service. The saved model checkpoint is loaded and the MOS result is converted to a 0-100 quality score.</figcaption></figure>
+  <figure class="figure codefig"><img src="assets/code_frontend_api.png" alt="Evidence 14: Frontend API call. The UI sends image and product text to /analyze and then applies the result to the page."><figcaption>Evidence 14: Frontend API call. The UI sends image and product text to /analyze and then applies the result to the page.</figcaption></figure>
+
+  <h3>CI/CD and deployment design</h3>
+  <p>The current repository has Vercel frontend configuration and backend run instructions. I also prepared CI/CD workflow explanation for the final presentation. The intended GitHub Actions workflow is to check dependency installation, basic import/runtime checks, model file policy, and deployment readiness. Secrets such as ClearML keys or deployment tokens should go into GitHub Secrets, not into repo files.</p>
+  <figure class="figure wide"><img src="assets/cloudflared_workflow.png" alt="Evidence 15: Cloudflared workflow diagram. It explains how a temporary SmartQC demo can be exposed through a public URL."><figcaption>Evidence 15: Cloudflared workflow diagram. It explains how a temporary SmartQC demo can be exposed through a public URL.</figcaption></figure>
+  <p>Cloudflared is not full production deployment. I treat it as a demo access method for tutors and teammates to test the product quickly.</p>
+</section>
+
+<section class="page section-break">
+  <h2>8. Communicating Project Results</h2>
+  <p>I tried to communicate the project result in a way that a business audience can understand. I did not only say "the model has a lower MAE". I connected the model result to seller value, platform review efficiency, and product readiness.</p>
+
+  <h3>Business-facing result story</h3>
+  <div class="grid3">
+    <div class="card"><h3>For sellers</h3><p>They get quick feedback before publishing. The output is pass, review or reject, not only a raw model number.</p></div>
+    <div class="card"><h3>For platform reviewers</h3><p>The system can reduce obvious invalid or low-quality submissions and make manual review more focused.</p></div>
+    <div class="card"><h3>For future product work</h3><p>ClearML and comparison results make model improvement more traceable, instead of relying on memory or one notebook.</p></div>
+  </div>
+
+  <h3>How I presented my part</h3>
+  <ul>
+    <li>I explained Stage 2 from dataset, model, experiment comparison, final model, and product output.</li>
+    <li>I used ClearML screenshots and metric tables so the audience could see real evidence.</li>
+    <li>I explained Cloudflared and CI/CD as productisation support, not just extra tools.</li>
+    <li>I used simple language in slides because the project should be understood by business users and technical users.</li>
+  </ul>
+  <div class="callout claim">
+    <b>Claimed level for communication of project results:</b> Level 4. My evidence is the structured presentation of data, model comparison, product UI, deployment workflow and business value. I used charts, screenshots and code evidence instead of only writing claims.
+  </div>
+</section>
+
+<section class="page section-break">
+  <h2>9. Reflection on Team Interactions</h2>
+  <p>This section is based on my four reflective journals and my final project experience. I write it in first person because it is about how the project team influenced me and how I influenced the team.</p>
+
+  <h3>Positive interactions</h3>
+  <p>One positive interaction was the early discussion about project direction. I put forward the two-stage pipeline idea, and the team discussed whether it made sense for product image checking. This helped me learn that a good AI project needs both technical feasibility and business meaning. My teammates also helped me think more about how a seller or reviewer would understand the result.</p>
+  <p>Another positive interaction happened during the later presentation work. When I prepared Stage 2, ClearML, Cloudflared and CI/CD content, teammates asked questions about how to explain them more simply. This pushed me to translate technical words into a product story.</p>
+
+  <h3>Challenging interactions</h3>
+  <p>The main challenge was progress pressure near the final deadline. Some parts were slower than I expected, and I felt anxious because the model, UI, deployment story and final documents had to connect together. I sometimes pushed teammates directly. This helped the project move, but I also know it could make the communication feel stressful.</p>
+  <p>Another challenge was that I sometimes worked on technical problems for too long by myself before explaining the uncertainty to others. For example, when model comparison results did not match my first assumption, I needed time to change my thinking from "ResNet50 should be better" to "the result is telling me preprocessing matters".</p>
+
+  <h3>My role, feelings, strengths and weakness</h3>
+  <table>
+    <tr><th>Area</th><th>Reflection</th></tr>
+    <tr><td>My role</td><td>I acted as a technical contributor and also a progress pusher. My main technical role was Stage 2 model work and experiment tracking.</td></tr>
+    <tr><td>Feelings</td><td>I felt confident when technical work was moving, but anxious when deadlines were close and some parts were not connected.</td></tr>
+    <tr><td>Strength</td><td>I can turn a vague technical idea into runnable experiments and evidence. I am willing to take responsibility.</td></tr>
+    <tr><td>Weakness</td><td>I can become impatient under pressure. I also sometimes explain decisions too fast because I already understand the background.</td></tr>
+  </table>
+
+  <h3>How the team influenced me</h3>
+  <p>My teammates influenced me by reminding me that the project is not only about model performance. They made me think about presentation, UI, business value and simple explanation. This changed how I wrote slides and how I explained results. I learned that a model is only useful if the user can understand the output and trust the workflow.</p>
+
+  <h3>How I influenced the team</h3>
+  <p>I think my influence was mainly technical structure and momentum. I helped turn Stage 2 from one POC into a more complete experiment process. I also pushed the team to connect the project into a final demo story: data, model, UI, deployment and product value. This made the final project easier to present as one product, not several separate files.</p>
+
+  <h3>Actions I will take next time</h3>
+  <ul>
+    <li>Start deployment planning earlier, not after model training is nearly finished.</li>
+    <li>Give shorter and earlier progress updates when I am unsure about a technical assumption.</li>
+    <li>Use a task list and simple deadlines instead of pushing only when the deadline is close.</li>
+    <li>Explain technical decisions with examples, not only model names and metrics.</li>
+    <li>Ask teammates what support they need before a task becomes late.</li>
+    <li>Keep using experiment tracking tools when there are many runs.</li>
+  </ul>
+  <div class="callout claim">
+    <b>Claimed level for team reflection:</b> Level 4. I described specific positive and challenging interactions, my feelings, my strengths and weaknesses, how others influenced me, how I influenced the team, and concrete actions for future improvement.
+  </div>
+</section>
+
+<section class="page section-break">
+  <h2>10. Claimed Performance Levels</h2>
+  <p>This table summarises my claimed performance levels against the AT5 rubric. I keep the claims connected to evidence in this report.</p>
+  <table>
+    <tr><th>Rubric criterion</th><th>Claimed level</th><th>Short reason</th></tr>
+    <tr><td>Environmental impacts</td><td>Level 4</td><td>I identify three impacts across training, storage and deployment, with sources and mitigation.</td></tr>
+    <tr><td>Social impacts</td><td>Level 4</td><td>I identify seller benefit, unfair rejection risk, and transparency/human review need, with sources.</td></tr>
+    <tr><td>Problem design</td><td>Level 4</td><td>The use case is a real two-stage product workflow using multimodal matching and IQA regression.</td></tr>
+    <tr><td>Project design proposal</td><td>Level 4</td><td>I contributed to the two-stage product idea and helped shape requirements around product image checking and quality scoring.</td></tr>
+    <tr><td>Design of POC</td><td>Level 4</td><td>I designed Stage 2 POC around KonIQ-10k, MOS regression, metrics and repeatable splits.</td></tr>
+    <tr><td>Design of interim solution V0.1</td><td>Level 4</td><td>I designed controlled experiments and ClearML tracking for multi-model comparison.</td></tr>
+    <tr><td>Design of final solution V0.2</td><td>Level 4</td><td>I helped connect Stage 2 output with backend logic, UI, deployment and product recommendation.</td></tr>
+    <tr><td>Implementation of POC</td><td>Level 4</td><td>Code evidence shows training config, ResNet model, metrics, logs and saved outputs.</td></tr>
+    <tr><td>Implementation of interim solution V0.1</td><td>Level 4</td><td>Evidence includes ClearML screenshots, model comparison table and controlled run results.</td></tr>
+    <tr><td>Implementation of final solution V0.2</td><td>Level 4</td><td>Evidence includes backend MOS service, decision logic, frontend API call and UI screenshot.</td></tr>
+    <tr><td>Communicate project results</td><td>Level 4</td><td>I present a structured product story with visuals and business meaning.</td></tr>
+    <tr><td>Communication skills</td><td>Level 3</td><td>I communicated actively and clearly, but I still need to improve tone and patience under pressure.</td></tr>
+    <tr><td>Reflection on team interactions</td><td>Level 4</td><td>I give detailed self-reflection, team influence, learning evidence, and future actions.</td></tr>
+  </table>
+</section>
+
+<section class="page section-break">
+  <h2>Appendix A: Extra Evidence Screenshots</h2>
+  <figure class="figure codefig"><img src="assets/code_stage1_prompts.png" alt="Appendix Evidence A1: Stage 1 prompt banks and threshold settings used in the final backend service."><figcaption>Appendix Evidence A1: Stage 1 prompt banks and threshold settings used in the final backend service.</figcaption></figure>
+  <figure class="figure codefig"><img src="assets/code_abo_features.png" alt="Appendix Evidence A2: ABO product text feature preparation for Stage 1 image-text consistency data."><figcaption>Appendix Evidence A2: ABO product text feature preparation for Stage 1 image-text consistency data.</figcaption></figure>
+  <figure class="figure wide"><img src="assets/stage1_examples.png" alt="Appendix Evidence A3: Stage 1 sample predictions and score visualisation from the project folder."><figcaption>Appendix Evidence A3: Stage 1 sample predictions and score visualisation from the project folder.</figcaption></figure>
+  <figure class="figure half"><img src="assets/mos_zscore_distribution.png" alt="Appendix Evidence A4: Additional KonIQ distribution evidence used during Stage 2 dataset understanding."><figcaption>Appendix Evidence A4: Additional KonIQ distribution evidence used during Stage 2 dataset understanding.</figcaption></figure>
+</section>
+
+<section class="page section-break">
+  <h2>Appendix B: Links and File Map</h2>
+  <h3>Important links</h3>
+  <ul class="appendix-list">
+    <li>V2 product code repo: <a href="https://github.com/jiaLu4/AI-Studio-rookie/tree/FinalVersion">https://github.com/jiaLu4/AI-Studio-rookie/tree/FinalVersion</a></li>
+    <li>Portfolio evidence folder: <a href="https://github.com/jiaLu4/AI-Studio-rookie/tree/main/Ge_Zhao_Portfolio">https://github.com/jiaLu4/AI-Studio-rookie/tree/main/Ge_Zhao_Portfolio</a></li>
+    <li>KonIQ-10k data source: <a href="https://database.mmsp-kn.de/koniq-10k-database.html">https://database.mmsp-kn.de/koniq-10k-database.html</a></li>
+  </ul>
+
+  <h3>Online Evidence Files Used</h3>
+  <table>
+    <tr><th>Evidence area</th><th>Online evidence links</th></tr>
+    <tr><td>Stage 2 POC</td><td><a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/code_training_config.png">training configuration screenshot</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/code_resnet_model.png">ResNet MOS model screenshot</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/code_metrics.png">evaluation metric screenshot</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/training_mae_curve.png">training MAE curve</a></td></tr>
+    <tr><td>Model comparison</td><td><a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/clearml_tasks_crop.png">ClearML task screenshot</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/clearml_scalars.png">ClearML scalar screenshot</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/model_selection_mae.png">model selection chart</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/model_comparison_table.png">model comparison table</a></td></tr>
+    <tr><td>Final backend</td><td><a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/code_backend_decision.png">two-stage backend decision screenshot</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/code_mos_service.png">MOS service screenshot</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/code_stage1_prompts.png">Stage 1 prompt and threshold screenshot</a></td></tr>
+    <tr><td>Frontend UI</td><td><a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/smartqc_demo_result.png">English SmartQC GUI result screenshot</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/code_frontend_api.png">frontend API call screenshot</a></td></tr>
+    <tr><td>Deployment</td><td><a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/assets/cloudflared_workflow.png">Cloudflared workflow diagram</a>, <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/README.md">portfolio evidence README</a></td></tr>
+    <tr><td>Reflection</td><td><a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/25244738_rookie_portfolio.pdf">final portfolio PDF</a> and <a href="https://github.com/jiaLu4/AI-Studio-rookie/blob/main/Ge_Zhao_Portfolio/25244738_rookie_portfolio.html">editable HTML source</a></td></tr>
+  </table>
+
+  <h3>References</h3>
+  <div class="apa-refs">
+    <p>Green Software Foundation. (n.d.). <i>Software Carbon Intensity</i>. Retrieved May 24, 2026, from <a href="https://greensoftware.foundation/standards/sci/">https://greensoftware.foundation/standards/sci/</a></p>
+    <p>Hosu, V., Lin, H., Sziranyi, T., &amp; Saupe, D. (2020). KonIQ-10k: An ecologically valid database for deep learning of blind image quality assessment. <i>IEEE Transactions on Image Processing, 29</i>, 4041-4056. <a href="https://doi.org/10.1109/TIP.2020.2967829">https://doi.org/10.1109/TIP.2020.2967829</a></p>
+    <p>International Energy Agency. (2023, July 11). <i>Data centres and data transmission networks</i>. <a href="https://www.iea.org/energy-system/digitalisation/data-centres-and-data-transmission-networks">https://www.iea.org/energy-system/digitalisation/data-centres-and-data-transmission-networks</a></p>
+    <p>Multimedia Signal Processing Group. (n.d.). <i>KonIQ-10k IQA database</i>. Retrieved May 24, 2026, from <a href="https://database.mmsp-kn.de/koniq-10k-database.html">https://database.mmsp-kn.de/koniq-10k-database.html</a></p>
+    <p>National Institute of Standards and Technology. (2023, January 26). <i>AI risk management framework</i>. <a href="https://www.nist.gov/itl/ai-risk-management-framework">https://www.nist.gov/itl/ai-risk-management-framework</a></p>
+    <p>Organisation for Economic Co-operation and Development. (2019). <i>OECD AI principles</i>. <a href="https://www.oecd.org/en/topics/ai-principles.html">https://www.oecd.org/en/topics/ai-principles.html</a></p>
+    <p>UNESCO. (2021). <i>Recommendation on the ethics of artificial intelligence</i>. <a href="https://www.unesco.org/en/articles/recommendation-ethics-artificial-intelligence?hub=66973">https://www.unesco.org/en/articles/recommendation-ethics-artificial-intelligence</a></p>
+  </div>
+</section>
+
+</body>
+</html>
