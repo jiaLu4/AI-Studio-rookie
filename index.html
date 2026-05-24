@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartQC Seller Center</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="seller-shell">
+      <header class="seller-topbar">
+        <div class="brand-block">
+          <div class="brand-mark">SQ</div>
+          <div>
+            <strong>SmartQC Seller Center</strong>
+            <span>Product listing workspace</span>
+          </div>
+        </div>
+
+        <nav class="seller-nav" aria-label="Seller navigation">
+          <a href="#">Listings</a>
+          <a href="#">Inventory</a>
+          <a href="#">Quality Check</a>
+          <a href="#">Help</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <span class="draft-badge">Draft Listing</span>
+          <span class="seller-tools">Seller Tools</span>
+        </div>
+      </header>
+
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">Create listing</p>
+          <h1>Create New Product Listing</h1>
+          <p>
+            Upload your main product image, enter listing details, then run SmartQC before publishing.
+          </p>
+        </div>
+        <div class="api-pill" aria-live="polite">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Checking model API</span>
+        </div>
+      </section>
+
+      <main class="seller-layout">
+        <section class="listing-workspace" aria-label="Product listing form">
+          <article class="seller-card" aria-labelledby="images-title">
+            <div class="card-header">
+              <div>
+                <p class="section-label">Step 1</p>
+                <h2 id="images-title">Product Images</h2>
+              </div>
+              <span class="card-note">Main image required</span>
+            </div>
+
+            <div class="image-manager">
+              <div class="main-image-column">
+                <label class="upload-box" id="dropZone">
+                  <input id="imageInput" type="file" accept="image/*" />
+                  <span class="upload-icon" aria-hidden="true">+</span>
+                  <strong>Upload main product image</strong>
+                  <span>PNG, JPG, or JPEG. Use a clear product-focused photo.</span>
+                </label>
+
+                <figure class="image-preview" id="previewFrame" hidden>
+                  <div class="image-preview-wrap">
+                    <img id="previewImage" alt="Selected main product image preview" />
+                    <span class="primary-badge">Primary image</span>
+                  </div>
+                  <figcaption id="imageMeta">No image selected</figcaption>
+                  <div class="image-actions">
+                    <button class="secondary-button" id="replaceImageButton" type="button">
+                      Replace Image
+                    </button>
+                    <button class="ghost-button" id="removeImageButton" type="button">
+                      Remove
+                    </button>
+                  </div>
+                </figure>
+              </div>
+
+              <div class="image-side-panel">
+                <p>Your main image will be checked for product relevance and visual quality.</p>
+                <div class="image-tips">
+                  <span>Use a simple background.</span>
+                  <span>Keep the product as the main subject.</span>
+                  <span>Avoid screenshots, posters, and collages.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="image-slots" aria-label="Additional product image placeholders">
+              <button class="image-slot" type="button">Add image</button>
+              <button class="image-slot" type="button">Add image</button>
+              <button class="image-slot" type="button">Add image</button>
+            </div>
+          </article>
+
+          <article class="seller-card" aria-labelledby="info-title">
+            <div class="card-header">
+              <div>
+                <p class="section-label">Step 2</p>
+                <h2 id="info-title">Product Information</h2>
+              </div>
+              <span class="card-note"><span id="wordCount">0</span> description words</span>
+            </div>
+
+            <div class="form-grid">
+              <label class="field field-wide" for="productNameInput">
+                <span>Product Title</span>
+                <input
+                  class="text-input"
+                  id="productNameInput"
+                  type="text"
+                  placeholder="e.g., Black Leather Handbag with Gold Chain Strap"
+                />
+              </label>
+
+              <label class="field" for="categoryInput">
+                <span>Category</span>
+                <select class="text-input" id="categoryInput">
+                  <option value="">Select category</option>
+                  <option>Fashion</option>
+                  <option>Electronics</option>
+                  <option>Home & Kitchen</option>
+                  <option>Beauty</option>
+                  <option>Sports</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label class="field" for="conditionInput">
+                <span>Condition</span>
+                <select class="text-input" id="conditionInput">
+                  <option>New</option>
+                  <option>Used - Like New</option>
+                  <option>Used - Good</option>
+                </select>
+              </label>
+
+              <label class="field" for="priceInput">
+                <span>Price</span>
+                <input class="text-input" id="priceInput" type="text" placeholder="e.g., 49.99" />
+              </label>
+
+              <label class="field" for="shortDescriptionInput">
+                <span>Short Description</span>
+                <input
+                  class="text-input"
+                  id="shortDescriptionInput"
+                  type="text"
+                  placeholder="Short selling point shown in listing preview"
+                />
+              </label>
+
+              <label class="field field-wide" for="descriptionInput">
+                <span>Product Description</span>
+                <textarea
+                  id="descriptionInput"
+                  rows="6"
+                  placeholder="Describe the product's visible features, color, material, style, and usage."
+                ></textarea>
+              </label>
+            </div>
+
+            <p class="inline-warning" id="noTextWarning" hidden>
+              No product text was provided. SmartQC will only check image validity.
+            </p>
+          </article>
+
+          <article class="seller-card preview-card" aria-labelledby="preview-title">
+            <div class="card-header">
+              <div>
+                <p class="section-label">Step 3</p>
+                <h2 id="preview-title">Listing Preview</h2>
+              </div>
+              <span class="preview-only">Preview only</span>
+            </div>
+
+            <div class="listing-preview">
+              <div class="preview-image-box">
+                <img id="listingPreviewImage" alt="Listing preview product image" hidden />
+                <span id="listingPreviewPlaceholder">Product image</span>
+              </div>
+              <div class="preview-copy">
+                <span class="preview-category" id="previewCategory">Category</span>
+                <h3 id="previewTitle">Product title will appear here</h3>
+                <strong id="previewPrice">$0.00</strong>
+                <p id="previewDescription">Description preview will appear here.</p>
+              </div>
+            </div>
+          </article>
+
+          <div class="listing-actions" aria-label="Listing actions">
+            <button class="secondary-button" id="saveDraftButton" type="button">Save Draft</button>
+            <button class="primary-button" id="analyzeButton" type="button" disabled>
+              Run SmartQC Check
+            </button>
+            <button class="submit-button" id="submitListingButton" type="button" disabled>
+              Continue / Submit Listing
+            </button>
+            <button class="ghost-button" id="clearButton" type="button">Clear</button>
+          </div>
+        </section>
+
+        <aside class="assistant-panel" aria-label="Listing Quality Assistant">
+          <article class="assistant-card">
+            <div class="assistant-header">
+              <div>
+                <p class="section-label">Built-in SmartQC</p>
+                <h2>Listing Quality Assistant</h2>
+              </div>
+              <span class="mode-pill" id="modePill">Waiting</span>
+            </div>
+            <p class="assistant-intro">
+              SmartQC checks whether your product image is suitable for publishing.
+            </p>
+
+            <p class="loading-indicator" id="loadingIndicator" hidden>
+              Running Stage 1 CLIP gatekeeper...
+            </p>
+            <p class="error-message" id="errorMessage" hidden></p>
+
+            <div class="decision-panel decision-waiting" id="decisionCard">
+              <span>Overall status</span>
+              <strong id="finalDecision">Not checked</strong>
+              <p id="decisionReason">Upload a main image and run SmartQC to get a publishing recommendation.</p>
+            </div>
+
+            <div class="checklist" aria-label="SmartQC checklist">
+              <div class="check-item" id="productValidityItem">
+                <span id="productValidityIcon">-</span>
+                <div>
+                  <strong>Product image validity</strong>
+                  <p id="productValidityText">Waiting for Stage 1.</p>
+                </div>
+              </div>
+              <div class="check-item" id="textMatchItem">
+                <span id="textMatchIcon">-</span>
+                <div>
+                  <strong>Text-image consistency</strong>
+                  <p id="textMatchText">Waiting for product text and image.</p>
+                </div>
+              </div>
+              <div class="check-item" id="visualQualityItem">
+                <span id="visualQualityIcon">-</span>
+                <div>
+                  <strong>Visual quality</strong>
+                  <p id="visualQualityText">Stage 2 runs only after Stage 1 allows it.</p>
+                </div>
+              </div>
+            </div>
+
+            <section class="assistant-section" aria-labelledby="stage1-title">
+              <div class="section-row">
+                <h3 id="stage1-title">Product Match Check</h3>
+                <span id="stage1Status" class="status-badge">Not run</span>
+              </div>
+              <dl class="assistant-metrics">
+                <div>
+                  <dt>Mode</dt>
+                  <dd id="stage1Mode">N/A</dd>
+                </div>
+                <div>
+                  <dt>Match confidence</dt>
+                  <dd id="matchScore">N/A</dd>
+                </div>
+              </dl>
+              <p class="reason-text" id="stage1Reason">Stage 1 runs before image quality scoring.</p>
+              <p class="message-text" id="matchNote">N/A</p>
+            </section>
+
+            <section class="assistant-section" aria-labelledby="stage2-title">
+              <div class="section-row">
+                <h3 id="stage2-title">Image Quality Check</h3>
+                <span id="stage2Status" class="status-badge">Not run</span>
+              </div>
+              <div class="quality-row">
+                <div>
+                  <span>Quality score</span>
+                  <strong id="qualityScore">N/A</strong>
+                </div>
+                <div class="score-bar" aria-hidden="true">
+                  <span id="qualityBar"></span>
+                </div>
+              </div>
+              <dl class="assistant-metrics">
+                <div>
+                  <dt>MOS score</dt>
+                  <dd id="mosScore">N/A</dd>
+                </div>
+                <div>
+                  <dt>Skipped reason</dt>
+                  <dd id="stage2SkippedReason">N/A</dd>
+                </div>
+              </dl>
+              <p class="message-text" id="qualityNote">Stage 2 is MOS overall image quality scoring.</p>
+            </section>
+
+            <section class="assistant-section recommendation-section" aria-labelledby="recommendation-title">
+              <h3 id="recommendation-title">Next Action</h3>
+              <p id="recommendationText">Run SmartQC to receive listing guidance.</p>
+            </section>
+
+            <section class="assistant-section drafts-section" aria-labelledby="drafts-title">
+              <div class="section-row">
+                <div>
+                  <p class="section-label">Backend drafts</p>
+                  <h3 id="drafts-title">Saved Drafts</h3>
+                </div>
+                <button class="ghost-button small-button" id="refreshDraftsButton" type="button">
+                  Refresh
+                </button>
+              </div>
+              <p class="draft-status" id="draftStatusText">Loading saved drafts...</p>
+              <div class="draft-list" id="draftList" aria-live="polite"></div>
+            </section>
+
+            <details class="technical-details">
+              <summary>View technical details</summary>
+
+              <div class="technical-grid">
+                <div>
+                  <span>Product score</span>
+                  <strong id="productScore">N/A</strong>
+                </div>
+                <div>
+                  <span>Invalid score</span>
+                  <strong id="invalidScore">N/A</strong>
+                </div>
+                <div>
+                  <span>Final score</span>
+                  <strong id="finalScore">N/A</strong>
+                </div>
+                <div>
+                  <span>Valid product image</span>
+                  <strong id="summaryValidProduct">N/A</strong>
+                </div>
+                <div>
+                  <span>Text matched</span>
+                  <strong id="summaryTextMatched">N/A</strong>
+                </div>
+                <div>
+                  <span>Quality available</span>
+                  <strong id="summaryQualityAvailable">N/A</strong>
+                </div>
+              </div>
+
+              <div class="diagnostics-block">
+                <div class="section-row">
+                  <h3>Image diagnostics</h3>
+                  <span class="mode-pill" id="diagnosticsModePill">Not model</span>
+                </div>
+                <p>
+                  Browser-side heuristic diagnostics, not model-based defect classification.
+                </p>
+                <div class="metric-stack">
+                  <div class="metric-row">
+                    <span>Sharpness</span>
+                    <div class="mini-bar"><span id="sharpnessBar"></span></div>
+                    <strong id="sharpnessValue">--</strong>
+                  </div>
+                  <div class="metric-row">
+                    <span>Exposure</span>
+                    <div class="mini-bar"><span id="exposureBar"></span></div>
+                    <strong id="exposureValue">--</strong>
+                  </div>
+                  <div class="metric-row">
+                    <span>Contrast</span>
+                    <div class="mini-bar"><span id="contrastBar"></span></div>
+                    <strong id="contrastValue">--</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="technical-grid">
+                <div>
+                  <span>Browser image signal</span>
+                  <strong id="imageSignal">N/A</strong>
+                </div>
+                <div>
+                  <span>Text completeness signal</span>
+                  <strong id="descriptionSignal">N/A</strong>
+                </div>
+                <div>
+                  <span>Model API</span>
+                  <strong id="backendSignal">Not connected</strong>
+                </div>
+                <div>
+                  <span>MOS model</span>
+                  <strong id="mosModelState">Not run</strong>
+                </div>
+                <div>
+                  <span>CLIP model</span>
+                  <strong id="clipModelState">Not run</strong>
+                </div>
+                <div>
+                  <span>Last response</span>
+                  <strong id="lastResponseSignal">N/A</strong>
+                </div>
+                <div>
+                  <span>API endpoint</span>
+                  <strong id="apiEndpointSignal">N/A</strong>
+                </div>
+              </div>
+            </details>
+
+            <div class="mobile-access">
+              <div class="section-row">
+                <div>
+                  <p class="section-label">Mobile access</p>
+                  <h3>Scan to open this page</h3>
+                </div>
+                <button class="ghost-button small-button" id="refreshQrButton" type="button">Refresh</button>
+              </div>
+              <div class="qr-row">
+                <div class="qr-image-wrap">
+                  <img id="qrImage" alt="QR code to open the SmartQC listing page" />
+                  <div class="qr-fallback" id="qrFallback" hidden>QR unavailable</div>
+                </div>
+                <div class="qr-copy">
+                  <input class="text-input" id="shareUrlInput" type="text" readonly />
+                  <button class="secondary-button small-button" id="copyShareUrlButton" type="button">
+                    Copy link
+                  </button>
+                </div>
+              </div>
+              <p class="qr-help" id="qrHelp">
+                Scan from a device on the same Wi-Fi/network. This opens the demo page.
+              </p>
+            </div>
+
+            <input id="apiBaseInput" type="hidden" />
+            <p class="model-status-line">
+              Model API: <strong id="modelStatusText">Checking...</strong>
+            </p>
+            <p class="summary-recommendation" id="summaryRecommendation" hidden>
+              Run the listing check to generate a recommendation.
+            </p>
+          </article>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./app.js?v=20260521-drafts"></script>
+  </body>
+</html>

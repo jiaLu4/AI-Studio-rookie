@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+python-multipart
+torch
+pillow
+numpy
+transformers
+open_clip_torch
